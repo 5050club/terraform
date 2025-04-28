@@ -1,3 +1,5 @@
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=5050club_terraform)
+
 # terraform
 
 ## install terraform on mac
