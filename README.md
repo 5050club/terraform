@@ -44,3 +44,5 @@ SONAR_HOST_URL : https://sonarcloud.io
 
 how to reference in gh actions:
 > sonar.host.url : xxx
+
+foo
