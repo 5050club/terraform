@@ -28,21 +28,27 @@ example usage:
 
 what are we going to do from a CI perspect?  what do we want to use to run security scans on it?
 
-### sonarcube config items
+### sonarcube
+
+Ok so within sonarqube (https://sonarcloud.io) on a repo, you can have "automatic analysis" turned on and then you dont need to have a github actions ci job for sonarqube.  when you create a PR to main, the sonarqube auto analysis will run and will put the results into the PR.  This is the preferred/better approach.
+
+However, if you did want to run a GH Actions job, this is the info you need:
 
 Instructions - 
 https://github.com/marketplace/actions/official-sonarqube-scan
 
-create sonar-project.properties in base directory
+Create sonar-project.properties in base directory - see instuctions link for more info.
+
+You need to create a token in sonarqube and put that into github secrets to be referenced by the GH actions job.  Note: in reality you shouldnt put the token here in the readme file but doing it for this.
 
 SONAR_TOKEN : 8dddc4e1a58ddbad4c13c99905a43aacf4c95b26
 
-how to reference in gh actions:
+how to reference in gh actions job:
 > sonar.token : xxx
+
+This isn't needed for sonarqube cloud, only for sonarqube server. 
 
 SONAR_HOST_URL : https://sonarcloud.io
 
-how to reference in gh actions:
+how to reference in gh actions job:
 > sonar.host.url : xxx
-
-foo
