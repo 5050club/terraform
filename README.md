@@ -27,3 +27,20 @@ example usage:
 ## ci
 
 what are we going to do from a CI perspect?  what do we want to use to run security scans on it?
+
+### sonarcube config items
+
+Instructions - 
+https://github.com/marketplace/actions/official-sonarqube-scan
+
+create sonar-project.properties in base directory
+
+SONAR_TOKEN : 8dddc4e1a58ddbad4c13c99905a43aacf4c95b26
+
+how to reference in gh actions:
+> sonar.token : xxx
+
+SONAR_HOST_URL : https://sonarcloud.io
+
+how to reference in gh actions:
+> sonar.host.url : xxx
