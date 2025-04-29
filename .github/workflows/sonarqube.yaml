@@ -1,0 +1,26 @@
+# sonarqube "automatic analysis" enabled (and is better option) so dont also need to run this in ci pipeline.
+
+# name: Sonarqube
+
+# on:
+#   push:
+#     branches: [ "main" ]
+  # sonarqube specific note: CE only supports analysis on one branch so cant do it on feature branches.  so keep this disabled.
+  # pull_request:
+  #   branches: [ "main" ]
+
+# permissions:
+#   contents: read
+
+#jobs:
+  # sonarqube:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #     with:
+  #       # Disabling shallow clones is recommended for improving the relevancy of reporting
+  #       fetch-depth: 0
+  #   - name: SonarQube Scan
+  #     uses: SonarSource/sonarqube-scan-action@v5.1.0 # Ex: v4.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
+  #     env:
+  #       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
