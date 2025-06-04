@@ -11,7 +11,7 @@ https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 ## what are we gonna use terraform for?
 
 - k3d
-- ?
+- argo running in k3d?
 
 ## Local kubernetes cluster powered by k3d
 
@@ -23,6 +23,38 @@ example usage:
 * `cp terraform.tfvars.example terraform.tfvars`
 * `terraform init`
 * `terraform apply`
+
+
+## terraform components
+
+
+- modules - https://registry.terraform.io/browse/modules
+    - https://developer.hashicorp.com/terraform/tutorials/modules/pattern-module-creation
+- workspaces
+    - https://spacelift.io/blog/terraform-workspaces
+- providers
+    - k3d - https://github.com/SneakyBugs/terraform-provider-k3d
+    - kubernetes - https://registry.terraform.io/providers/hashicorp/kubernetes/latest
+    - local - https://registry.terraform.io/providers/hashicorp/local/latest
+- resource
+- provisioner
+
+## terraform file structure
+
+https://www.terraform-best-practices.com/code-structure
+https://spacelift.io/blog/terraform-files
+
+
+main.tf - call modules, locals, and data sources to create all resources
+variables.tf - contains declarations of variables used in main.tf
+outputs.tf - contains outputs from the resources created in main.tf
+versions.tf - contains version requirements for Terraform and providers
+
+terraform.tfvars should not be used anywhere except composition.
+
+modules
+|_category
+|__resource
 
 ## ci
 
@@ -52,3 +84,11 @@ SONAR_HOST_URL : https://sonarcloud.io
 
 how to reference in gh actions job:
 > sonar.host.url : xxx
+
+
+install opentofu
+> brew install opentofu
+
+install atlantis
+
+minio to store state?
